@@ -1,7 +1,7 @@
-# CPSC-Team02
+# CPSC-4140 Final Prototype
 
 ## About
-This is Team 02's 4910 Git Repository
+Allen Shin
 
 ## Setup Instructions
 
