@@ -1,0 +1,16 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\frontend",
+    "\\frontend\\src",
+    "\\frontend\\src\\pages",
+    "\\frontend\\src\\pages\\certifications",
+    "\\frontend\\src\\pages\\events",
+    "\\frontend\\src\\pages\\inventory",
+    "\\frontend\\src\\pages\\users",
+    "\\frontend\\src\\styles",
+    "\\server"
+  ],
+  "SelectedNode": "\\frontend\\src\\pages\\inventory\\viewTemplate.jsx",
+  "PreviewInSolutionExplorer": false
+}
