@@ -87,12 +87,12 @@ export const ViewInventory = () => {
 				{ markup }
 			</div>
 
-			<div style={{ display: "flex", justifyContent: "space-around" }}>
+			{/*<div style={{ display: "flex", justifyContent: "space-around" }}>
 				<button
 					onClick={() => { navigate(`/certifications/add`); }}
 					className="cert-addbtn"
 				>Add</button>
-			</div>
+			</div>*/}
 		</div>
 	</>);
 }
