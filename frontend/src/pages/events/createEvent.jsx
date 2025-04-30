@@ -51,9 +51,6 @@ export const CreateEvent = () => {
 			alert("Unable to publish event");
 			return;
 		}
-
-		//navigate(`/calendar`, { replace: true });
-		alert("We changin setReqmenuShown");
 		setReqmenuShown(true);
 	}
 	const addreq = async (form) => {
@@ -136,7 +133,6 @@ export const CreateEvent = () => {
 
 	useEffect(() => {
 		setOptList();
-		alert("We updating");
 	}, [reqmenuShown]);
 
 	const menushowStyle = {
