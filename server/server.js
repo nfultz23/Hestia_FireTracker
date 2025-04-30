@@ -520,7 +520,7 @@ app.get(`/api/inventory/templates/:tempID`, async (req, res) => {
 
 		let x = 0;
 		for (x in file["inventory"]["templates"]) {
-			if (file["inventory"]["templates"][x]["id"] === parseInt(req.params.itemID, 10))
+			if (file["inventory"]["templates"][x]["id"] === parseInt(req.params.tempID, 10))
 				break;
 		}
 
