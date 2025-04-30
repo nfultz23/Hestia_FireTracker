@@ -77,7 +77,7 @@ export const ViewInventory = () => {
 	return (<>
 		<div className="cert-container">
 			<div style={{ width: "100%", display: "flex", justifyContent: "space-around" }}>
-				<h1 className="cert-boxheader">Inventory</h1>
+				<h1 className="cert-boxheader">Your Kits</h1>
 				<button
 					className="inventory-templatebtn"
 					onClick={() => { navigate("/inventory/templates") }}
@@ -87,12 +87,12 @@ export const ViewInventory = () => {
 				{ markup }
 			</div>
 
-			{/*<div style={{ display: "flex", justifyContent: "space-around" }}>
+			<div style={{ display: "flex", justifyContent: "space-around" }}>
 				<button
 					onClick={() => { navigate(`/certifications/add`); }}
 					className="cert-addbtn"
-				>Add</button>
-			</div>*/}
+				>Add Kit</button>
+			</div>
 		</div>
 	</>);
 }

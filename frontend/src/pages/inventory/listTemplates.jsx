@@ -57,12 +57,12 @@ export const ListTemplates = () => {
 								}
 							);
 
-							if (!response.ok) { alert(`Error deleting kit ${e.title}`); }
+							if (!response.ok) { alert(`Error deleting Template ${e.title}`); }
 
 							getTemplates();
 						}}
 						className="inventory-modbtn"
-					>Delete Kit</button>
+					>Delete Template</button>
 
 					<button
 						onClick={() => { navigate(`/inventory/templates/${e.id}`); }}
@@ -88,6 +88,10 @@ export const ListTemplates = () => {
 			</div>
 
 			<div style={{ display: "flex", justifyContent: "space-around" }}>
+				<button
+					onClick={() => { navigate(`/certifications/add`); }}
+					className="cert-addbtn"
+				>Add Template</button>
 			</div>
 		</div>
 	</>);
