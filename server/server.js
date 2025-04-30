@@ -252,6 +252,37 @@ app.post(`/api/events`, async (req, res) => {
 
 	return;
 });
+//Update an event in the database
+app.patch(`/api/events/:eventID`, async (req, res) => {
+	try {
+		const fs = require('fs').promises;
+		const jsonData = await fs.readFile(process.env.serverEndpoint, 'utf8');
+		const file = JSON.parse(jsonData);
+
+		let x = 0;
+		for (x in file["events"]) {
+			if (file["events"][x]["id"] == parseInt(req.params.eventID, 10)) break;
+		}
+
+		if (req.body["title"] != undefined & req.body["title"] != "")
+			file["events"][x]["title"] = req.body["title"];
+		if (req.body["location"] != undefined && req.body["location"] != "")
+			file["events"][x]["location"] = req.body["location"];
+		if (req.body["start"] != undefined && req.body["start"] != "")
+			file["events"][x]["start"] = req.body["start"];
+		if (req.body["end"] != undefined && req.body["end"])
+			file["events"][x]["end"] = req.body["end"];
+		file["events"][x]["color"] = req.body["color"];
+
+		const jsonstr = JSON.stringify(file);
+		await fs.writeFile(process.env.serverEndpoint, jsonstr, 'utf8');
+		return res.status(205).json({ message: "Good job" });
+	} catch (err) {
+		console.log(`Error in /api/events/${req.params.eventID} (POST)`);
+		console.log(err);
+		return res.status(500).json({ error: err });
+	}
+});
 
 //Get a list of kits in the inventory
 app.get(`/api/inventory/kits`, async (req, res) => {

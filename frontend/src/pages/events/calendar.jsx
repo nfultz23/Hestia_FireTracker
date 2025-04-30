@@ -59,7 +59,7 @@ export const WeekCalendar = () => {
 	const menuShown = {
 		backgroundColor: "#F0CFCFFF", width: 100,
 		height: 70, marginTop: 0, marginLeft: -110,
-		position: "absolute", zIndex: 5,
+		position: "absolute", zIndex: 100,
 		borderRadius: 10, border: "2px solid #480505FF"
 	}
 
@@ -163,7 +163,7 @@ export const WeekCalendar = () => {
 
 				<div style={menushown == e.id ? menuShown : menuHidden}>
 					<button
-						onClick={() => { console.log(`Editing event ${e.id}`) }}
+						onClick={() => { navigate(`/calendar/editEvent/${e.id}`); }}
 						className="event-modbtn"
 					>Edit Event</button>
 					<button

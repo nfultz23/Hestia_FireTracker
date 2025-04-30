@@ -21,6 +21,7 @@ import { CertInfo } from './pages/certifications/certCreate';
 //Calendar pages
 import { WeekCalendar } from './pages/events/calendar';
 import { CreateEvent } from './pages/events/createEvent';
+import { EditEvent } from './pages/events/editEvent';
 
 //Inventory pages
 import { ViewInventory } from './pages/inventory/inventoryHome';
@@ -50,6 +51,7 @@ function App() {
 
 							<Route path="/calendar" element={<WeekCalendar />} />
 							<Route path="/calendar/addEvent" element={<CreateEvent />} />
+							<Route path="/calendar/editEvent/:eventID" element={<EditEvent />} />
 
 							<Route path="/inventory" element={<ViewInventory />} />
 							<Route path="/inventory/kits/:kitID" element={<ViewKit />} />
