@@ -32,7 +32,8 @@ export const EditEvent = () => {
 				"location": formJson["eventloc"],
 				"start": formJson["eventstart"],
 				"end": formJson["eventend"],
-				"color": chipColor
+				"color": chipColor,
+				"requirements": []
 			})
 		});
 

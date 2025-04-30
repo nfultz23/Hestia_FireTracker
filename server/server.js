@@ -226,16 +226,18 @@ app.post(`/api/events`, async (req, res) => {
 		}
 		const newID = maxID + 1;
 
-		let certsArr = Array.from(file["events"]);
-		certsArr.push({
+		let eventsArr = Array.from(file["events"]);
+		eventsArr.push({
 			"id": newID,
 			"title": req.body["title"],
 			"location": req.body["location"],
 			"start": req.body["start"],
 			"end": req.body["end"],
-			"color": req.body["color"]
+			"color": req.body["color"],
+			"requirements": req.body["requirements"],
+			"personnel":[]
 		});
-		file["events"] = certsArr;
+		file["events"] = eventsArr;
 
 		const jsonstr = JSON.stringify(file);
 		await fs.writeFile(
@@ -273,12 +275,35 @@ app.patch(`/api/events/:eventID`, async (req, res) => {
 		if (req.body["end"] != undefined && req.body["end"])
 			file["events"][x]["end"] = req.body["end"];
 		file["events"][x]["color"] = req.body["color"];
+		if (req.body["requirements"] != undefined && req.body["requirements"].length != 0)
+			file["events"][x]["requirements"].push(req.body["requirements"]);
 
 		const jsonstr = JSON.stringify(file);
 		await fs.writeFile(process.env.serverEndpoint, jsonstr, 'utf8');
 		return res.status(205).json({ message: "Good job" });
 	} catch (err) {
 		console.log(`Error in /api/events/${req.params.eventID} (POST)`);
+		console.log(err);
+		return res.status(500).json({ error: err });
+	}
+});
+//Delete an event from the database
+app.delete(`/api/events/:eventID`, async (req, res) => {
+	try {
+		const fs = require('fs').promises;
+		const jsonData = await fs.readFile(process.env.serverEndpoint, 'utf8');
+		const file = JSON.parse(jsonData);
+
+		file["events"] = file["events"].filter(o => e["id"] != req.params.eventID);
+
+		const jsonstr = JSON.stringify(file);
+		await fs.writeFile(
+			process.env.serverEndpoint, jsonstr, 'utf8'
+		);
+
+		return res.status(205).json({ message: "Deleted successfully" });
+	} catch (err) {
+		console.log(`Error in /api/events/${req.params.eventID} (DELETE)`);
 		console.log(err);
 		return res.status(500).json({ error: err });
 	}
