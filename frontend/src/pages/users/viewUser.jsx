@@ -141,6 +141,13 @@ export const ViewUser = () => {
 					<div id="badgebox" style={badgeBoxStyle}>
 						{badgeMarkup}
 					</div>
+					<button
+						onClick={() => {
+							alert("hah you thought this button worked");
+							alert("I'm sorry, it was mean to prank you with a nonfunctional button");
+						}}
+						className="profile-rankbtn"
+					>Grant Rank</button>
 				</div>
 			</>);
 

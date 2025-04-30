@@ -76,6 +76,8 @@ body {
 	border-radius: 15px;
 	z-index: 1;
 	position: relative;
+	display: flex;
+	flex-direction: column;
 }
 .myaccount-iconcontainer {
 	background-color: #E5B0B0FF;
@@ -676,4 +678,25 @@ body {
 	.inventory-modbtn:hover {
 		background-color: #C74E4EFF;
 		cursor: pointer;
+	}
+
+.profile-rankbtn {
+	font-size: 14px;
+	padding-top: 8px;
+	padding-bottom: 8px;
+	padding-left: 10px;
+	padding-right: 10px;
+	border-radius: 10px;
+	border: 0px solid #00000000;
+	background-color: #480505FF;
+	color: #E5B0B0FF;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: auto;
+	margin-bottom: 30px;
+	transition: background-color 0.25s ease;
+	cursor: pointer;
+}
+	.profile-rankbtn:hover {
+		background-color: #C74E4EFF;
 	}
