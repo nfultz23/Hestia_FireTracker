@@ -89,7 +89,7 @@ export const ViewInventory = () => {
 
 			<div style={{ display: "flex", justifyContent: "space-around" }}>
 				<button
-					onClick={() => { navigate(`/certifications/add`); }}
+					onClick={() => { console.log("Navigating to Kit Creation"); }}
 					className="cert-addbtn"
 				>Add Kit</button>
 			</div>

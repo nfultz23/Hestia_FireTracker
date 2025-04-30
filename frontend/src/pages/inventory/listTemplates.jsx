@@ -89,7 +89,7 @@ export const ListTemplates = () => {
 
 			<div style={{ display: "flex", justifyContent: "space-around" }}>
 				<button
-					onClick={() => { navigate(`/certifications/add`); }}
+					onClick={() => { console.log("Navigating to Template Creation"); }}
 					className="cert-addbtn"
 				>Add Template</button>
 			</div>
