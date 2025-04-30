@@ -87,12 +87,12 @@ export const ViewInventory = () => {
 				{ markup }
 			</div>
 
-			<div style={{ display: "flex", justifyContent: "space-around" }}>
+			{/*<div style={{ display: "flex", justifyContent: "space-around" }}>
 				<button
 					onClick={() => { console.log("Navigating to Kit Creation"); }}
 					className="cert-addbtn"
 				>Add Kit</button>
-			</div>
+			</div>*/}
 		</div>
 	</>);
 }

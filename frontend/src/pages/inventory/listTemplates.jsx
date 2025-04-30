@@ -87,12 +87,12 @@ export const ListTemplates = () => {
 				{markup}
 			</div>
 
-			<div style={{ display: "flex", justifyContent: "space-around" }}>
+			{/*<div style={{ display: "flex", justifyContent: "space-around" }}>
 				<button
 					onClick={() => { console.log("Navigating to Template Creation"); }}
 					className="cert-addbtn"
 				>Add Template</button>
-			</div>
+			</div>*/}
 		</div>
 	</>);
 }
